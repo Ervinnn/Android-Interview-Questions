@@ -1,2 +1,27 @@
 # Android-Interview-Questions
 Android 面试试题
+
+1.在什么条件下，代码示例可能会导致应用程序崩溃？你将如何修改代码以避免这个潜在的问题？解释你的答案。
+```java
+    Intent sendIntent = new Intent();
+    sendIntent.setAction(Intent.ACTION_SEND);
+    sendIntent.putExtra(Intent.EXTRA_TEXT, textMessage);
+    sendIntent.setType(HTTP.PLAIN_TEXT_TYPE); // "text/plain" MIME type
+    startActivity(sendIntent);
+
+2.活动生命周期中的最后一个回调是onDestroy()。系统在您的活动上调用此方法，作为您的活动实例从系统内存中完全删除的最终信号。
+   通常情况下，系统会调用onPause()和onStop()之前调用onDestroy()。描述一个场景，
+   但是，在这里onPause()和onStop()将不会被调用。
+
+3.Serializable和Parcelable有什么区别？在Android中哪个是最好的方法？
+
+4.可以将所有数据库表更新保存在activity的onStop()吗？如果不行，解释为什么，并解释应该在哪里进行保存
+  A.可以，   B.不可以保存在onSaveInstanceState   C.不，因为onStop不会被调用 
+  
+5.请列出Android所有Context的类型。并简单说明他们的使用场景以及区别
+
+6.ArrayList和Vector之间有什么区别
+
+7.java中什么是检查异常，什么是未检查异常
+
+8.请给出几种屏幕适配的思路，尽可能详细。
